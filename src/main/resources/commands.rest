@@ -1,0 +1,32 @@
+### WEB CLIENT
+
+### getAll
+GET http://localhost:8080/webclient/all
+Content-Type: application/json
+
+### getById
+GET http://localhost:8080/webclient/2
+Content-Type: application/json
+
+### create
+POST http://localhost:8080/webclient
+Content-Type: application/json
+
+{
+  "id": 11,
+  "name": "A B"
+}
+
+### update
+PUT http://localhost:8080/webclient?id=5
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "C D"
+}
+
+### delete
+DELETE http://localhost:8080/webclient/2
+Content-Type: application/json
+
