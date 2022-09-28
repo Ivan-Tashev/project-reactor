@@ -1,8 +1,8 @@
 package com.example.projectreactor.web;
 
 
-import com.example.projectreactor.Repo.ReactiveUserRepo;
-import com.example.projectreactor.Repo.UserRepo;
+import com.example.projectreactor.repo.ReactiveUserRepo;
+import com.example.projectreactor.repo.UserRepo;
 import com.example.projectreactor.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.example.projectreactor.Repo;
+package com.example.projectreactor.repo;
 
 import com.example.projectreactor.model.Player;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
