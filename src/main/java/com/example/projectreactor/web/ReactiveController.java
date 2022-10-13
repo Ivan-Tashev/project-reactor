@@ -4,6 +4,7 @@ package com.example.projectreactor.web;
 import com.example.projectreactor.repo.ReactiveUserRepo;
 import com.example.projectreactor.repo.UserRepo;
 import com.example.projectreactor.model.User;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,24 +12,26 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
+@AllArgsConstructor
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping(path = "/reactive", produces = "application/json")
 public class ReactiveController {
 
-    // --------- Poor practice ---------
     private UserRepo userRepo;
+    private ReactiveUserRepo reactiveUserRepo;
 
+    // --------- Poor practice ---------
     @GetMapping("/bad")
     public Flux<User> getAllUsersFromIterable() {
         return Flux.fromIterable(userRepo.findAll());
     }
 
     // --------- Good practice ---------
-    private ReactiveUserRepo reactiveUserRepo;
+
 
     @GetMapping("/all")
     public Flux<User> getAllUsers() { // if RxJava can return Observable or Flowable
-        return reactiveUserRepo.findAll().take(5);
+        return reactiveUserRepo.findAll(); // .take(5);
     }
 
     @GetMapping("/{id}")
