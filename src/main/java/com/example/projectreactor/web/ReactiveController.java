@@ -27,8 +27,6 @@ public class ReactiveController {
     }
 
     // --------- Good practice ---------
-
-
     @GetMapping("/all")
     public Flux<User> getAllUsers() { // if RxJava can return Observable or Flowable
         return reactiveUserRepo.findAll(); // .take(5);

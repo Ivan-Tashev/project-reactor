@@ -60,10 +60,11 @@ public class WebClientController {
     }
 
     @PutMapping
-    public Mono<User> updateUser(@RequestParam("id") String id) {
+    public Mono<User> updateUser(@RequestParam("id") String id, @RequestBody Mono<User> user) {
         return webClient
                 .put()
                 .uri("/users/{id}", id)
+                .bodyValue(user)
                 .exchangeToMono(response ->  // return full ClientResponse obj
                         response.headers().header("X_Auth").isEmpty() // response.cookies().containsKey("A")
                                 ? Mono.empty() : Mono.just(response)) // get Mono<ClientResponse>

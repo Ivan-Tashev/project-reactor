@@ -1,12 +1,11 @@
 package com.example.projectreactor.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
+import org.springframework.data.relational.core.mapping.Table;
 
 import javax.persistence.Id;
 
+@Table
 @Data // incl. @ReqArgsCtor
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = "id")
