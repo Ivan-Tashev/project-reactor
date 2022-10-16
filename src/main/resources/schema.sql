@@ -7,8 +7,7 @@ create table Player
     name varchar(10) not null
 );
 
-insert into Player
-values (1, 'A'),
+insert into Player values (1, 'A'),
        (2, 'B'),
        (3, 'C');
 
